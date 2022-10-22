@@ -21,5 +21,6 @@ public class test {
         }finally {
             System.out.println("종료!");
         }
+        System.out.println("hi");
     }
 }

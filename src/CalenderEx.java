@@ -1,31 +1,31 @@
+
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Scanner;
 
-public class CalenderEx {
+public class main {
     public static void main(String[] args) {
 
-        int nowYear;
-        int nowMonth;
-        int nowDay;
+        Calendar thatDay = Calendar.getInstance();
+        thatDay.set(Calendar.YEAR,2020);
+        thatDay.set(Calendar.MONTH,4);
+        thatDay.set(Calendar.DATE,1);
 
-        int exYear;
-        int exMonth;
-        int exDay;
+        int num = thatDay.get(Calendar.DAY_OF_YEAR);
 
-        Scanner sc = new Scanner(System.in);
-        nowYear = sc.nextInt();
+        Date d = new Date();
+        Calendar today = Calendar.getInstance();
+        today.setTime(d);
+        System.out.println(d);
+        int num1 = today.get(Calendar.DAY_OF_YEAR);
+
+        boolean a = today.after(thatDay);
+
+        if(a == true){
+            System.out.println(num1 - num);
+
+        }
+        else System.out.println("X");
 
 
-
-        Calendar today =Calendar.getInstance();
-        Calendar ex = Calendar.getInstance();
-        ex.set(exYear,exMonth+1,exDay);
-
-        long diffSec = (today.getTimeInMillis() - ex.getTimeInMillis())/1000;
-
-        long diffDay = diffSec / (24*60*60);
-
-        System.out.println(diffDay + "일 경과");
     }
 }
